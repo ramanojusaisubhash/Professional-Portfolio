@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important;
+  scroll-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+

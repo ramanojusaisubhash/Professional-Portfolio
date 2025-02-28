@@ -1,0 +1,115 @@
+.skills-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: red;
+    margin: 5px auto 20px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: gray;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Skills Grid Layout */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Space between items */
+    max-width: 800px;
+    margin: auto;
+    padding: 12px;
+}
+
+/* Individual Skill Container */
+.skill-container {
+    margin-bottom: 20px;
+}
+
+/* Skill Title */
+.skill-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Slim Progress Bar */
+.skill-container .progress {
+    height: 6px; /* Slim bar */
+    border-radius: 10px; /* Smooth rounded corners */
+    background-color: #e0e0e0;
+    overflow: hidden;
+}
+
+/* Red Progress Bar with Animation */
+.skill-container .progress-bar {
+    border-radius: 10px;
+    background-color: #ff4d4d;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+/* Active Class for Animation */
+.skill-container.animated .progress-bar {
+    width: var(--progress-width);
+}
+
+/* Responsive: Stack items in one column on mobile */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* One column layout */
+    }
+}
+/* Skill Icons Styling */
+.skills-icon-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.skill-icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-icon-box span {
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Icon Colors */
+.skill-icon.html { color: #E44D26; }      /* HTML */
+.skill-icon.css { color: #1572B6; }       /* CSS */
+.skill-icon.js { color: #F7DF1E; }        /* JavaScript */
+.skill-icon.react { color: #61DAFB; }     /* React */
+.skill-icon.node { color: #68A063; }      /* Node.js */
+.skill-icon.mongo { color: #47A248; }     /* MongoDB */
+.skill-icon.bootstrap { color: #200050; } /* Bootstrap */
+
+.skill-icon:hover {
+    transform: scale(1.2);
+}
+

@@ -1,0 +1,47 @@
+.custom-navbar {
+  backdrop-filter: blur(5px); /* Strong blur */
+  transition: all 0.4s ease-in-out;
+}
+
+.custom-navbar.scrolled {
+  background: rgba(0, 0, 0, 0.816); /* Darker on scroll */
+  backdrop-filter: blur(2px);
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #606060 !important;
+}
+
+/* Active Link Styling */
+.nav-link.active {
+  color: #ff4500 !important; /* Change this color to your preference */
+  font-weight: bold;
+}
+
+/* Logo Styling */
+.navbar-logo {
+  height: 40px; /* Adjust size */
+  width: auto;
+}
+/* Navbar Toggle Button */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  outline: none !important;
+  padding: 10px;
+}
+
+/* Toggle Button Lines (Hamburger Icon) */
+.navbar-toggler span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.7); /* Light white color */
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,90 @@
+.contact-section {
+    padding: 60px 0;
+    font-family: "Exo 2", sans-serif;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background-color: red;
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    font-size: 24px;
+    color: red;
+}
+
+.contact-info h5 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.contact-info p {
+    margin: 0;
+    color: gray;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.error-text {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Updated Send Button to Match Contact Button */
+.send-btn {
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    border-radius: 50px !important;
+    background-color: red !important;
+    border: none !important;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 15px;
+    color: white;
+}
+
+.send-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: left 0.4s ease-in-out;
+}
+
+.send-btn:hover::before {
+    left: 100%;
+}
+
+.send-btn:hover {
+    color: red !important;
+    background-color: whitesmoke !important;
+    border: 1px solid red !important;
+}
+
+.send-icon {
+    margin-right: 8px;
+}
