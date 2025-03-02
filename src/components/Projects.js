@@ -42,7 +42,7 @@ function Projects() {
       "images": [project5_1,project5_2,project5_3,project5_4], // Replace with actual image URLs
       "details": "The portfolio includes Home, About, Skills, Projects, and Contact sections, each built as a React component. It features an animated introduction, smooth scrolling, and a clean layout. The About section shares my background, Skills highlights my expertise, Projects showcases my work, and Contact provides ways to reach me.",
       "technologies": "React, Bootstrap, CSS, JavaScript",
-      "url": "No URL!" // Replace with actual deployment URL if available
+      "url": "https://subhash-portfolio-main.vercel.app/" // Replace with actual deployment URL if available
     },
     {
       id: 3,

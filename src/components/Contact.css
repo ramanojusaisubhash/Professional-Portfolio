@@ -88,3 +88,41 @@ form input, form textarea {
 .send-icon {
     margin-right: 8px;
 }
+/* Social Media Icons */
+.social-icons-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-icon {
+    font-size: 28px;
+    margin: 0 15px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Default color (gray) */
+.social-icon {
+    color: gray;
+}
+
+/* Apply respective colors */
+.social-icon.github:hover {
+    color: #333;  /* GitHub (Black) */
+}
+
+.social-icon.instagram:hover {
+    color: #E1306C; /* Instagram (Pink-Red) */
+}
+
+.social-icon.linkedin:hover {
+    color: #0077b5; /* LinkedIn (Blue) */
+}
+
+.social-icon.facebook:hover {
+    color: #1877F2; /* Facebook (Blue) */
+}
+
+/* Scale effect on hover */
+.social-icon:hover {
+    transform: scale(1.2);
+}

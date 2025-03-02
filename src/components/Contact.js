@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser"; // Import EmailJS
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaGithub, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
+
+
+ // Import Social Icons
 import "./Contact.css";
 
 function Contact() {
@@ -143,6 +146,27 @@ function Contact() {
             </Form>
           </Col>
         </Row>
+
+        {/* Social Media Icons */}
+        <Row className="social-icons-container pt-5">
+          <Col>
+            <a href="https://github.com/ramanojusaisubhash" target="_blank" rel="noopener noreferrer" className="social-icon github">
+              <FaGithub></FaGithub>
+            </a>
+            <a href="https://www.linkedin.com/in/ramanojusaisubhash" target="_blank" rel="noopener noreferrer" className="social-icon linkedin">
+              <FaLinkedin />
+            </a>
+            <a href="https://www.instagram.com/sai.subhash.52?utm_source=qr&igsh=cXVwdmFhMjVybmNx" target="_blank" rel="noopener noreferrer" className="social-icon instagram">
+              <FaInstagram />
+            </a>
+            
+            <a href="https://www.facebook.com/share/15xnTipx1d/" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
+              <FaFacebook />
+            </a>
+            
+          </Col>
+        </Row>
+
       </Container>
     </section>
   );
