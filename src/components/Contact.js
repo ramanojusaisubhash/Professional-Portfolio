@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser"; // Import EmailJS
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaGithub, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaGithub, FaInstagram, FaLinkedin, FaFacebook, FaUsers } from "react-icons/fa";
 
 
  // Import Social Icons
@@ -17,6 +17,28 @@ function Contact() {
 
   const [errors, setErrors] = useState({});
   const [isSent, setIsSent] = useState(false);
+  const [visitorCount, setVisitorCount] = useState(0);
+
+  useEffect(() => {
+    const updateVisitorCount = () => {
+      let count = localStorage.getItem("visitorCount");
+      if (!count) {
+        count = 1;
+      } else {
+        count = parseInt(count);
+      }
+
+      if (!sessionStorage.getItem("visited")) { // Prevents double increment in strict mode
+        localStorage.setItem("visitorCount", count + 1);
+        setVisitorCount(count + 1);
+        sessionStorage.setItem("visited", "true");
+      } else {
+        setVisitorCount(count);
+      }
+    };
+
+    updateVisitorCount();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -146,6 +168,16 @@ function Contact() {
             </Form>
           </Col>
         </Row>
+        <div style={{display: "flex" , justifyContent: "enter", alignItems: "baseline"}}>
+        {/* Visitor Counter*/}
+        <Row className="visitor-counter-container">
+          <Col>
+            <div className="visitor-counter">
+              <FaUsers className="visitor-icon" />
+              <span>{visitorCount} Visitors</span>
+            </div>
+          </Col>
+        </Row>
 
         {/* Social Media Icons */}
         <Row className="social-icons-container pt-5">
@@ -166,6 +198,7 @@ function Contact() {
             
           </Col>
         </Row>
+        </div>
 
       </Container>
     </section>

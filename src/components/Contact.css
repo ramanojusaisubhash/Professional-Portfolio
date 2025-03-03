@@ -126,3 +126,46 @@ form input, form textarea {
 .social-icon:hover {
     transform: scale(1.2);
 }
+/* Visitor Counter Styling */
+.visitor-counter-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.visitor-counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: gray;
+}
+
+.visitor-icon {
+    font-size: 24px;
+    color: red;
+}
+
+/* Ensure the visitor counter and social icons align properly */
+.visitor-social-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Responsive Fix for Mobile View */
+@media (max-width: 768px) {
+    .visitor-social-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .visitor-counter-container {
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+}

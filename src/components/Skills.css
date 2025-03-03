@@ -87,17 +87,26 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    animation: float 3s infinite ease-in-out;
 }
 
 .skill-icon {
     font-size: 50px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    position: relative;
 }
 
-.skill-icon-box span {
-    font-size: 14px;
-    margin-top: 5px;
-    font-weight: bold;
+/* Hover Effect: Scale and Rotate */
+.skill-icon:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-40px); }
+    100% { transform: translateY(0); }
 }
 
 /* Icon Colors */

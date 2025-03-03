@@ -1,0 +1,40 @@
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Show button when scrolling down */
+  .scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Hide button when at the top */
+  .scroll-to-top.hide {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+  }
+  
+  /* Hover effect */
+  .scroll-to-top:hover {
+    background-color: #d43f3f;
+  }
+  

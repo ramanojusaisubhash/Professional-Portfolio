@@ -4,7 +4,9 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -15,7 +17,9 @@ function App() {
       <About />
       <Skills />
       <Projects />
+      <Certificates />
       <Contact />
+      <ScrollToTop />
     </>
   );
 }

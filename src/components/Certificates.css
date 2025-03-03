@@ -1,0 +1,153 @@
+/* Center align */
+#certificates {
+  padding: 60px 10px;
+  text-align: center;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  overflow: hidden;
+  max-width: 100vw;
+}
+
+/* Certificate card */
+.certificate-card {
+  width: 40%;
+  margin: auto;
+  padding: 15px;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  animation: fadeInUp 0.8s forwards ease-out;
+}
+
+/* Hover effect on card */
+.certificate-card:hover {
+  transform: scale(1.1) rotate(1deg);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+/* Make the image fit well */
+.certificate-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Hover effect on image */
+.certificate-card:hover .certificate-img {
+  transform: scale(1.05) ;
+}
+
+/* Certificate title animation */
+.certificate-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.certificate-card:hover .certificate-title {
+  opacity: 1;
+  transform: translateY(0);
+  animation: bounce 0.6s ease-in-out;
+}
+
+/* Move arrows outside the card */
+.custom-arrow {
+  background-color: rgb(147, 0, 0);
+  border-radius: 50%;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.custom-arrow:hover {
+  background-color: rgb(95, 0, 0);
+}
+
+/* Adjust position of arrows */
+.carousel-control-prev {
+  left: -50px;
+}
+
+.carousel-control-next {
+  right: -30px;
+}
+
+/* Style for carousel indicators */
+.carousel-indicators button {
+  background-color: rgb(147, 0, 0) !important;
+  width: 12px;
+  height: 12px;
+  transition: transform 0.3s;
+}
+
+.carousel-indicators button:hover {
+  transform: scale(1.2);
+}
+
+/* Move indicators further down */
+.carousel-indicators {
+  position: absolute;
+  transform: translateY(90%);
+}
+
+/* Prevent Horizontal Scrolling */
+body {
+  overflow-x: hidden;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .certificate-card {
+    width: 90%;
+  }
+
+  .certificate-title {
+    font-size: 1rem;
+  }
+
+  .custom-arrow {
+    padding: 10px;
+  }
+
+  .carousel-control-prev {
+    left: -30px;
+  }
+
+  .carousel-control-next {
+    right: -30px;
+  }
+}
+
+/* Title animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Bounce animation for hover effect */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
