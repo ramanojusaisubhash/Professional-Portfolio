@@ -17,27 +17,19 @@ function Contact() {
 
   const [errors, setErrors] = useState({});
   const [isSent, setIsSent] = useState(false);
-  const [visitorCount, setVisitorCount] = useState(0);
+  const [visitCount, setVisitCount] = useState(0);
 
   useEffect(() => {
-    const updateVisitorCount = () => {
-      let count = localStorage.getItem("visitorCount");
-      if (!count) {
-        count = 1;
-      } else {
-        count = parseInt(count);
-      }
+    const currentCount = localStorage.getItem("visitCount");
 
-      if (!sessionStorage.getItem("visited")) { // Prevents double increment in strict mode
-        localStorage.setItem("visitorCount", count + 1);
-        setVisitorCount(count + 1);
-        sessionStorage.setItem("visited", "true");
-      } else {
-        setVisitorCount(count);
-      }
-    };
-
-    updateVisitorCount();
+    if (currentCount) {
+      const newCount = parseInt(currentCount) + 1;
+      setVisitCount(newCount);
+      localStorage.setItem("visitCount", newCount);
+    } else {
+      setVisitCount(1);
+      localStorage.setItem("visitCount", 1);
+    }
   }, []);
 
   const handleChange = (e) => {
@@ -103,7 +95,7 @@ function Contact() {
               <FaMapMarkerAlt className="contact-icon" />
               <div>
                 <h5>Location</h5>
-                <p>India</p>
+                <p>Rajahmundry , India</p>
               </div>
             </div>
           </Col>
@@ -174,7 +166,7 @@ function Contact() {
           <Col>
             <div className="visitor-counter">
               <FaUsers className="visitor-icon" />
-              <span>{visitorCount} Visitors</span>
+              <span>{visitCount} times Visited</span>
             </div>
           </Col>
         </Row>

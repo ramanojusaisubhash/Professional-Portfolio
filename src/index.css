@@ -16,12 +16,7 @@ code {
 }
 
 /* Apply Custom Cursor */
-* {
-  cursor: url("../public/icons8-target-35.png"), auto;
-}
-a, button, .pointer .social-icons-container{
-  cursor: url("../public/icons8-cursor-25.png"), pointer !important;
-}
+
 /* For WebKit Browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 5px; /* Slim Width */
