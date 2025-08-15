@@ -65,6 +65,7 @@ function CustomNavbar() {
           <Nav className="ms-auto">
             <Nav.Link href="#home" className={activeSection === "home" ? "active" : ""}>Home</Nav.Link>
             <Nav.Link href="#about" className={activeSection === "about" ? "active" : ""}>About</Nav.Link>
+            <Nav.Link href="#qualification" className={activeSection === "qualification" ? "active" : ""}>Qualification</Nav.Link>
             <Nav.Link href="#skills" className={activeSection === "skills" ? "active" : ""}>Skills</Nav.Link>
             <Nav.Link href="#projects" className={activeSection === "projects" ? "active" : ""}>Projects</Nav.Link>
             <Nav.Link href="#certificates" className={activeSection === "certificates" ? "active" : ""}>Certificates</Nav.Link>

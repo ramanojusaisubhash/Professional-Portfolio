@@ -1,0 +1,98 @@
+.timeline-container {
+  position: relative;
+  width: 100%;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  z-index: 2;
+}
+
+.timeline-line {
+  width: 2px;
+  background-color: #dc3545;
+  flex-grow: 1;
+  min-height: 80px;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+/* Always keep switch fill in red */
+.form-check-input[type="checkbox"]:checked {
+  background-color: #dc3545 !important; /* Red when checked */
+  border-color: #dc3545 !important;
+}
+
+.form-check-input[type="checkbox"]:not(:checked) {
+  background-color: #dc3545 !important; /* Red when unchecked */
+  border-color: #dc3545 !important;
+}
+
+/* Optional: keep focus outline in red */
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25) !important;
+}
+
+/* White thumb (circle) */
+.form-check-input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 2px; /* adjust vertically */
+  left: 2px; /* adjust horizontally */
+  width: calc(1rem - 4px); /* size matches toggle height */
+  height: calc(1rem - 4px);
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Move thumb to the right when checked */
+.form-check-input[type="checkbox"]:checked::before {
+  transform: translateX(1rem); /* adjust based on toggle width */
+}
+
+
+
+
+/* Mobile view: Dot → Content → Line */
+@media (max-width: 767px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-center {
+    order: 1; /* Dot first */
+    margin-bottom: 10px;
+  }
+
+  .timeline-left,
+  .timeline-right {
+    order: 2; /* Content second */
+    width: 90%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .timeline-line {
+    order: 3; /* Line last */
+    margin-top: 10px;
+    min-height: 50px;
+  }
+}
