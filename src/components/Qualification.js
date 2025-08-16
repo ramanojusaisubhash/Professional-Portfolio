@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import { motion } from "framer-motion"; // ✅ Import Framer Motion
+import { motion } from "framer-motion"; 
 import "./Qualification.css";
 
 function Qualification() {
   const [isWork, setIsWork] = useState(false);
+  const [scrollDir, setScrollDir] = useState("down");
+
+  // ✅ Detect scroll direction
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const updateScrollDir = () => {
+      const newScrollY = window.scrollY;
+      if (newScrollY > lastScrollY) {
+        setScrollDir("down");
+      } else if (newScrollY < lastScrollY) {
+        setScrollDir("up");
+      }
+      lastScrollY = newScrollY;
+    };
+    window.addEventListener("scroll", updateScrollDir);
+    return () => window.removeEventListener("scroll", updateScrollDir);
+  }, []);
 
   const educationData = [
     {
@@ -44,10 +61,13 @@ function Qualification() {
 
   const dataToRender = isWork ? workData : educationData;
 
-  // ✅ Animation Variants
+  // ✅ Animation Variants (scroll direction + stagger)
   const fadeInVariant = {
-    hidden: { opacity: 0, y: -50 },
-    visible: (i) => ({
+    hidden: ({ dir }) => ({
+      opacity: 0,
+      y: dir === "down" ? 50 : -50, // 👈 scroll down → bottom-to-top, scroll up → top-to-bottom
+    }),
+    visible: ({ i }) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -86,12 +106,12 @@ function Qualification() {
         <div className="timeline-container">
           {dataToRender.map((item, index) => (
             <motion.div
-              key={`${isWork}-${index}`}   // ✅ key depends on toggle + index
+              key={`${isWork}-${index}`}
               className="timeline-item"
-              custom={index} // Pass index for stagger
+              custom={{ dir: scrollDir, i: index }} // ✅ pass scrollDir + index
               initial="hidden"
-              animate="visible"            // ✅ trigger animation again
-              viewport={{ once: true, amount: 0.2 }}
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.2 }} // re-trigger on scroll
               variants={fadeInVariant}
             >
               <Row className="w-100">

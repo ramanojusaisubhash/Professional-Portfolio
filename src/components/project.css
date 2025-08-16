@@ -19,7 +19,7 @@
   }
   
   .project-card:hover {
-    transform: scale(1.03) rotate(-1deg); /* Slight tilt effect */
+    transform: scale(1.03) rotate(-0.9deg); /* Slight tilt effect */
     box-shadow: 0 0 15px rgba(74, 74, 74, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
