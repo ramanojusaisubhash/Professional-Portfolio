@@ -57,7 +57,7 @@ function About() {
               </p>
 
               {/* CV Download Button */}
-              <a href="/Sai_Subhash_Resume_.pdf" target="_blank" >
+              <a href="/Ramanoju_Sai_Subhash_Resume_updated.pdf" target="_blank" >
                 <Button variant="danger" className="cv-btn">
                   View CV
                 </Button>
